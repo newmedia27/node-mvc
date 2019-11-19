@@ -1,12 +1,18 @@
 <h3>User List</h3>
 
+{{#if list.length}}
+{{#each list}}
 <ul class="collection">
     <li class="collection-item avatar">
-        <img src="images/yuna.jpg" alt="" class="circle">
-        <span class="title">Title</span>
-        <p>First Line <br>
-            Second Line
+        <img src="{{link}}" alt="" class="circle">
+        <span class="title">{{name}}</span>
+        <p>{{last_name}} <br>
+            {{email}}
         </p>
-        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        <a href="/user/{{id}}" class="secondary-content"><i class="material-icons">detail</i></a>
     </li>
 </ul>
+{{/each}}
+{{else}}
+<marquee behavior="" direction="">Don't any users!!</marquee>
+{{/if}}

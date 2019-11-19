@@ -11,10 +11,10 @@ router.get("/", (req, res) => {
 
 router.post("/", async (req, res) => {
   const {
-    body: { name, last_name, email }
+    body: { name, last_name, email, link }
   } = req;
 
-  const user = new User(name, last_name, email);
+  const user = new User(name, last_name, email, link);
   await user.save();
   res.redirect("/users");
 });

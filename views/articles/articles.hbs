@@ -1,0 +1,21 @@
+<h1>Welcom in Articles page!</h1>
+
+{{#if list.length}}
+{{#each list}}
+<ul class="collection">
+    <li class="collection-item avatar">
+        <img src="{{image}}" alt="{{title}}" class="circle">
+        <span class="title">{{title}}</span>
+        <p>{{author}} <br>
+        </p>
+        <a href="/articles/{{id}}" class="secondary-content"><i class="material-icons">detail</i></a>
+    </li>
+</ul>
+{{/each}}
+<a class="btn btn-primary" href="/articles/create">Create a new article</a>
+{{else}}
+<div behavior="" direction="">Don't any atricles!!</div>
+    {{#if isAuth}}
+    <a class="btn btn-primary" href="/articles/create">Create</a>
+    {{/if}}
+{{/if}}

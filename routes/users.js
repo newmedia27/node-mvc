@@ -1,11 +1,20 @@
 const { Router } = require("express");
 
+const User = require('../models/user')
+
 const router = Router();
 
-router.get("/", (req, res) => {
+
+
+router.get("/", async (req, res) => {
+
+  const list = await User.getAll()
+
+
   res.render("users", {
     title: "Users",
-    isUsers: true
+    isUsers: true,
+    list,
   });
 });
 
